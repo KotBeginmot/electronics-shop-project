@@ -2,9 +2,11 @@
 import pytest
 from src.item import Item
 
+
 @pytest.fixture
 def items():
     return Item('str', 200000, 20)
+
 
 def test_item(items):
     assert items.name == 'str'
@@ -12,3 +14,6 @@ def test_item(items):
     assert items.quantity == 20
     assert items.calculate_total_price() == 200000 * 20
 
+
+def test_name(items):
+    assert items.name == 'Ноутбук'
